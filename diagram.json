@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "IrrigFaultNet",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-v1", "id": "esp32", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -80, "left": 200, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "sm1", "top": 100, "left": 300, "attrs": { "label": "Soil@10cm" } },
+    { "type": "wokwi-potentiometer", "id": "sm2", "top": 200, "left": 300, "attrs": { "label": "Soil@30cm" } },
+    { "type": "wokwi-potentiometer", "id": "sm3", "top": 300, "left": 300, "attrs": { "label": "Soil@60cm" } }
+  ],
+  "connections": [
+    [ "esp32:3V3", "dht1:VCC", "red", [] ],
+    [ "esp32:GND.1", "dht1:GND", "black", [] ],
+    [ "esp32:D4", "dht1:SDA", "green", [] ],
+    [ "sm1:SIG", "esp32:VP", "orange", [] ],
+    [ "sm1:VCC", "esp32:3V3", "red", [] ],
+    [ "sm1:GND", "esp32:GND.1", "black", [] ],
+    [ "sm2:SIG", "esp32:VN", "orange", [] ],
+    [ "sm2:VCC", "esp32:3V3", "red", [] ],
+    [ "sm2:GND", "esp32:GND.1", "black", [] ],
+    [ "sm3:SIG", "esp32:D34", "orange", [] ],
+    [ "sm3:VCC", "esp32:3V3", "red", [] ],
+    [ "sm3:GND", "esp32:GND.1", "black", [] ]
+  ]
+}
